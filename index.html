@@ -15,24 +15,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
 <style>
 :root{
-  --bg:#f5f4f0;
-  --card:#ffffff;
-  --border:#e5e3dd;
-  --border2:#ccc9c0;
-  --text:#1a1a18;
-  --text2:#6b6a65;
-  --text3:#9a9890;
-  --green:#3B6D11;
-  --green-bg:#EAF3DE;
-  --green-border:#97C459;
-  --red:#A32D2D;
-  --red-bg:#FCEBEB;
-  --red-border:#F09595;
-  --blue:#185FA5;
-  --blue-bg:#E6F1FB;
-  --blue-border:#85B7EB;
-  --radius:12px;
-  --radius-sm:8px;
+  --bg:#f5f4f0;--card:#ffffff;--border:#e5e3dd;--border2:#ccc9c0;
+  --text:#1a1a18;--text2:#6b6a65;--text3:#9a9890;
+  --green:#3B6D11;--green-bg:#EAF3DE;--green-border:#97C459;
+  --red:#A32D2D;--red-bg:#FCEBEB;--red-border:#F09595;
+  --radius:12px;--radius-sm:8px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);overscroll-behavior:none}
@@ -49,19 +36,16 @@ html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;colo
 .goal-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
 .goal-total-label{font-size:12px;color:var(--text2);margin-bottom:2px}
 .goal-total-val{font-size:32px;font-weight:600;line-height:1}
-.goal-total-val.ok{color:var(--green)}
-.goal-total-val.ko{color:var(--red)}
+.goal-total-val.ok{color:var(--green)}.goal-total-val.ko{color:var(--red)}
 .goal-target{text-align:right}
 .goal-target-label{font-size:12px;color:var(--text2);margin-bottom:2px}
 .goal-target-val{font-size:22px;font-weight:500;color:var(--text2)}
 .progress-bar{height:7px;border-radius:4px;background:var(--bg);overflow:hidden;margin-bottom:10px}
 .progress-fill{height:100%;border-radius:4px;transition:width .4s cubic-bezier(.4,0,.2,1)}
-.progress-fill.ok{background:var(--green)}
-.progress-fill.ko{background:var(--red)}
+.progress-fill.ok{background:var(--green)}.progress-fill.ko{background:var(--red)}
 .remaining-text{font-size:13px;color:var(--text2)}
-.remaining-text .highlight{font-weight:600}
-.remaining-text .highlight.ok{color:var(--green)}
-.remaining-text .highlight.ko{color:var(--red)}
+.remaining-text .hl{font-weight:600}
+.remaining-text .hl.ok{color:var(--green)}.remaining-text .hl.ko{color:var(--red)}
 .section-label{font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px;margin-top:1.25rem}
 .foods-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;margin-bottom:1.1rem}
 .food-item{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-bottom:1px solid var(--border)}
@@ -69,23 +53,23 @@ html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;colo
 .food-name{font-size:14px;color:var(--text)}
 .food-right{display:flex;align-items:center;gap:10px}
 .food-grams{font-size:13px;font-weight:500;color:var(--text2)}
-.food-del{background:none;border:none;cursor:pointer;color:var(--text3);font-size:17px;padding:4px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.food-del{background:none;border:none;cursor:pointer;color:var(--text3);font-size:17px;padding:4px;border-radius:6px;display:flex;align-items:center}
 .food-del:active{background:var(--red-bg);color:var(--red)}
 .empty-state{padding:16px 14px;font-size:13px;color:var(--text3);text-align:center}
 .add-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:14px}
 .add-row{display:flex;gap:8px;align-items:center}
 .add-row input[type=text]{flex:1;font-size:14px;padding:10px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;outline:none}
 .add-row input[type=text]:focus{border-color:var(--border2)}
-.add-row input[type=number]{width:68px;font-size:14px;padding:10px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;text-align:center}
+.add-row input[type=number]{width:68px;font-size:14px;padding:10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;text-align:center}
 .add-row input[type=number]:focus{border-color:var(--border2)}
 .add-btn{padding:10px 14px;border-radius:var(--radius-sm);border:none;background:var(--text);font-size:14px;font-weight:500;cursor:pointer;color:#fff;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:4px;flex-shrink:0}
 .add-btn:active{opacity:.85}
+/* Calendar */
 .cal-month-header{margin-bottom:1rem}
 .cal-month-name{font-size:20px;font-weight:600;color:var(--text);margin-bottom:4px;text-transform:capitalize}
 .cal-month-stats{font-size:13px;color:var(--text2)}
-.cal-month-stats .highlight{font-weight:600}
-.cal-month-stats .ok{color:var(--green)}
-.cal-month-stats .ko{color:var(--red)}
+.cal-month-stats .hl{font-weight:600}
+.cal-month-stats .ok{color:var(--green)}.cal-month-stats .ko{color:var(--red)}
 .cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:3px}
 .cal-wd{font-size:10px;font-weight:600;color:var(--text3);text-align:center;padding:4px 0;text-transform:uppercase;letter-spacing:.04em}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
@@ -94,22 +78,15 @@ html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;colo
 .cal-cell.today{border:2px solid var(--text)}
 .cal-day-num{font-size:12px;font-weight:500;color:var(--text);line-height:1.3}
 .cal-day-g{font-size:10px;margin-top:4px;font-weight:600;line-height:1.2}
-.cal-day-g.ok{color:var(--green)}
-.cal-day-g.ko{color:var(--red)}
-.cal-day-g.none{color:var(--text3);font-weight:400}
+.cal-day-g.ok{color:var(--green)}.cal-day-g.ko{color:var(--red)}.cal-day-g.none{color:var(--text3);font-weight:400}
 .week-summary{grid-column:1/-1;border-radius:var(--radius-sm);padding:9px 12px;display:flex;justify-content:space-between;align-items:center;margin-top:2px;margin-bottom:4px}
 .week-summary.ok{border:1px solid var(--green-border);background:var(--green-bg)}
 .week-summary.ko{border:1px solid var(--red-border);background:var(--red-bg)}
 .week-sum-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:5px}
-.week-summary.ok .week-sum-label{color:var(--green)}
-.week-summary.ko .week-sum-label{color:var(--red)}
+.week-summary.ok .week-sum-label{color:var(--green)}.week-summary.ko .week-sum-label{color:var(--red)}
 .week-sum-val{font-size:13px;font-weight:600}
-.week-summary.ok .week-sum-val{color:var(--green)}
-.week-summary.ko .week-sum-val{color:var(--red)}
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-
-/* Backup view */
+.week-summary.ok .week-sum-val{color:var(--green)}.week-summary.ko .week-sum-val{color:var(--red)}
+/* Backup */
 .backup-section{margin-bottom:1.5rem}
 .backup-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:1.1rem 1.25rem}
 .backup-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:8px}
@@ -117,34 +94,47 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 .backup-desc{font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.5}
 .backup-btn{width:100%;padding:12px;border-radius:var(--radius-sm);font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .15s}
 .backup-btn:active{opacity:.8}
-.btn-export{background:var(--text);color:#fff;border:none}
-.btn-import{background:var(--card);color:var(--text);border:1px solid var(--border2)}
+.btn-primary{background:var(--text);color:#fff;border:none}
+.btn-secondary{background:var(--card);color:var(--text);border:1px solid var(--border2)}
 .backup-stats{font-size:12px;color:var(--text3);text-align:center;margin-top:10px}
 .backup-stats span{font-weight:600;color:var(--text2)}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:#fff;font-size:13px;font-weight:500;padding:10px 20px;border-radius:99px;opacity:0;transition:all .3s;pointer-events:none;z-index:999;white-space:nowrap}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.toast.ok-toast{background:var(--green)}
-.toast.err-toast{background:var(--red)}
 .import-area{border:1.5px dashed var(--border2);border-radius:var(--radius-sm);padding:20px;text-align:center;cursor:pointer;transition:border-color .2s;position:relative}
-.import-area:hover{border-color:var(--blue)}
 .import-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .import-icon{font-size:28px;color:var(--text3);margin-bottom:6px}
 .import-label{font-size:13px;color:var(--text2);font-weight:500}
 .import-sub{font-size:12px;color:var(--text3);margin-top:3px}
+/* Goal settings */
+.goal-edit-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.goal-edit-row input[type=number]{width:90px;font-size:22px;font-weight:600;padding:10px 12px;border-radius:var(--radius-sm);border:1.5px solid var(--border2);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;text-align:center}
+.goal-edit-row input[type=number]:focus{border-color:var(--text)}
+.goal-unit{font-size:15px;font-weight:500;color:var(--text2)}
+.goal-preview{font-size:12px;color:var(--text3);line-height:1.8;margin-bottom:12px}
+.goal-preview strong{color:var(--text2);font-weight:600}
+/* Goal history */
+.goal-history{margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
+.goal-history-title{font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.goal-history-item{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border)}
+.goal-history-item:last-child{border-bottom:none}
+.goal-hist-date{font-size:12px;color:var(--text2)}
+.goal-hist-val{font-size:13px;font-weight:600;color:var(--text)}
+.goal-hist-badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:99px;background:var(--bg);color:var(--text3);margin-left:6px}
+.goal-hist-badge.current{background:var(--green-bg);color:var(--green)}
+.goal-hist-del{background:none;border:none;cursor:pointer;color:var(--text3);font-size:15px;padding:3px;display:flex;align-items:center}
+.goal-hist-del:active{color:var(--red)}
+/* Toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:#fff;font-size:13px;font-weight:500;padding:10px 20px;border-radius:99px;opacity:0;transition:all .3s;pointer-events:none;z-index:999;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.ok-toast{background:var(--green)}.toast.err-toast{background:var(--red)}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 </style>
 </head>
 <body>
 <div class="app">
   <div class="tab-bar">
-    <button class="tab active" id="tab-oggi" onclick="showTab('oggi')">
-      <i class="ti ti-bolt"></i> Oggi
-    </button>
-    <button class="tab" id="tab-calendario" onclick="showTab('calendario')">
-      <i class="ti ti-calendar"></i> Calendario
-    </button>
-    <button class="tab" id="tab-backup" onclick="showTab('backup')">
-      <i class="ti ti-database"></i> Backup
-    </button>
+    <button class="tab active" id="tab-oggi" onclick="showTab('oggi')"><i class="ti ti-bolt"></i> Oggi</button>
+    <button class="tab" id="tab-calendario" onclick="showTab('calendario')"><i class="ti ti-calendar"></i> Calendario</button>
+    <button class="tab" id="tab-backup" onclick="showTab('backup')"><i class="ti ti-database"></i> Backup</button>
   </div>
 
   <!-- OGGI -->
@@ -158,16 +148,12 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
           <div class="goal-total-val ko" id="total-val">0g</div>
         </div>
         <div class="goal-target">
-          <div class="goal-target-label">Obiettivo</div>
-          <div class="goal-target-val">200g</div>
+          <div class="goal-target-label">Obiettivo oggi</div>
+          <div class="goal-target-val" id="today-goal-val">200g</div>
         </div>
       </div>
-      <div class="progress-bar">
-        <div class="progress-fill ko" id="prog-fill" style="width:0%"></div>
-      </div>
-      <div class="remaining-text" id="remaining-text">
-        <span class="highlight ko">200g mancanti</span> all'obiettivo
-      </div>
+      <div class="progress-bar"><div class="progress-fill ko" id="prog-fill" style="width:0%"></div></div>
+      <div class="remaining-text" id="remaining-text"><span class="hl ko">200g mancanti</span> all'obiettivo</div>
     </div>
     <div class="section-label">Alimenti di oggi</div>
     <div class="foods-card" id="foods-card">
@@ -178,9 +164,7 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
       <div class="add-row">
         <input type="text" id="food-name" placeholder="Nome alimento" autocomplete="off"/>
         <input type="number" id="food-prot" placeholder="g" min="0" max="999"/>
-        <button class="add-btn" onclick="addFood()">
-          <i class="ti ti-plus" style="font-size:16px"></i> Add
-        </button>
+        <button class="add-btn" onclick="addFood()"><i class="ti ti-plus" style="font-size:16px"></i> Add</button>
       </div>
     </div>
   </div>
@@ -190,14 +174,32 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
     <div id="cal-container"></div>
   </div>
 
-  <!-- BACKUP -->
+  <!-- BACKUP / IMPOSTAZIONI -->
   <div id="view-backup" class="view">
+
+    <div class="backup-section">
+      <div class="section-label">Obiettivo giornaliero</div>
+      <div class="backup-card">
+        <div class="backup-title"><i class="ti ti-target"></i> Imposta obiettivo</div>
+        <div class="backup-desc">Il nuovo valore vale <strong>da oggi in avanti</strong>. I giorni passati mantengono l'obiettivo che era attivo allora.</div>
+        <div class="goal-edit-row">
+          <input type="number" id="goal-input" min="50" max="500" step="5"/>
+          <span class="goal-unit">g / giorno</span>
+        </div>
+        <div class="goal-preview" id="goal-preview"></div>
+        <button class="backup-btn btn-primary" onclick="saveGoal()">
+          <i class="ti ti-check" style="font-size:17px"></i> Salva obiettivo
+        </button>
+        <div class="goal-history" id="goal-history"></div>
+      </div>
+    </div>
+
     <div class="backup-section">
       <div class="section-label">Esporta dati</div>
       <div class="backup-card">
         <div class="backup-title"><i class="ti ti-file-download"></i> Scarica backup</div>
-        <div class="backup-desc">Esporta tutti i tuoi dati in un file JSON. Conservalo sul telefono o in cloud per non perderlo mai.</div>
-        <button class="backup-btn btn-export" onclick="exportData()">
+        <div class="backup-desc">Esporta tutti i tuoi dati (alimenti + storico obiettivi) in un file JSON.</div>
+        <button class="backup-btn btn-primary" onclick="exportData()">
           <i class="ti ti-download" style="font-size:17px"></i> Esporta dati
         </button>
         <div class="backup-stats" id="backup-stats"></div>
@@ -208,9 +210,9 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
       <div class="section-label">Importa dati</div>
       <div class="backup-card">
         <div class="backup-title"><i class="ti ti-file-upload"></i> Ripristina backup</div>
-        <div class="backup-desc">Seleziona un file JSON esportato in precedenza. I dati verranno <strong>aggiunti</strong> a quelli esistenti — le giornate già presenti vengono mantenute.</div>
-        <div class="import-area" id="import-area">
-          <input type="file" accept=".json,application/json" onchange="importData(event)" id="file-input"/>
+        <div class="backup-desc">I dati vengono uniti a quelli esistenti senza sovrascrivere nulla.</div>
+        <div class="import-area">
+          <input type="file" accept=".json,application/json" onchange="importData(event)"/>
           <div class="import-icon"><i class="ti ti-file-import"></i></div>
           <div class="import-label">Tocca per selezionare il file</div>
           <div class="import-sub">Formato: .json</div>
@@ -223,32 +225,146 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 <div class="toast" id="toast"></div>
 
 <script>
-const GOAL = 200;
-const STORAGE_KEY = 'protein_tracker_data';
-let data = {};
+const DATA_KEY  = 'protein_tracker_data';
+const GOALS_KEY = 'protein_tracker_goals';
 
-function load() {
+let data  = {};
+// goalHistory: array of {from: 'YYYY-MM-DD', value: number}, sorted ascending by date
+// The entry with the latest `from` <= today is the current goal.
+let goalHistory = [];
+
+/* ---- GOAL HELPERS ---- */
+function getGoalForDate(dateKey) {
+  // find the last entry whose `from` <= dateKey
+  let val = 200;
+  for (let i = 0; i < goalHistory.length; i++) {
+    if (goalHistory[i].from <= dateKey) val = goalHistory[i].value;
+    else break;
+  }
+  return val;
+}
+
+function currentGoal() {
+  return getGoalForDate(todayKey());
+}
+
+function loadGoals() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) data = JSON.parse(raw);
+    const raw = localStorage.getItem(GOALS_KEY);
+    if (raw) goalHistory = JSON.parse(raw);
   } catch(e) {}
+  if (!goalHistory.length) {
+    // default: 200g from the beginning of time
+    goalHistory = [{ from: '2000-01-01', value: 200 }];
+  }
+  syncGoalUI();
+}
+
+function saveGoals() {
+  localStorage.setItem(GOALS_KEY, JSON.stringify(goalHistory));
+}
+
+function saveGoal() {
+  const val = parseInt(document.getElementById('goal-input').value);
+  if (!val || val < 50 || val > 500) { showToast('Inserisci un valore tra 50 e 500', 'err'); return; }
+  const today = todayKey();
+  // Remove any existing entry for today (replace, don't stack)
+  goalHistory = goalHistory.filter(e => e.from !== today);
+  goalHistory.push({ from: today, value: val });
+  goalHistory.sort((a, b) => a.from.localeCompare(b.from));
+  saveGoals();
+  syncGoalUI();
+  renderToday();
+  renderCal();
+  showToast('Obiettivo aggiornato a ' + val + 'g!', 'ok');
+}
+
+function deleteGoalEntry(from) {
+  if (goalHistory.length <= 1) { showToast('Devi avere almeno un obiettivo', 'err'); return; }
+  goalHistory = goalHistory.filter(e => e.from !== from);
+  saveGoals();
+  syncGoalUI();
+  renderToday();
+  renderCal();
+  showToast('Voce rimossa', 'ok');
+}
+
+function syncGoalUI() {
+  const cur = currentGoal();
+  document.getElementById('goal-input').value = cur;
+  updateGoalPreview();
+  renderGoalHistory();
+  document.getElementById('today-goal-val').textContent = cur + 'g';
+}
+
+function updateGoalPreview() {
+  const el = document.getElementById('goal-preview');
+  if (!el) return;
+  const val = parseInt(document.getElementById('goal-input').value) || currentGoal();
+  const now = new Date();
+  const daysInMonth = new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+  el.innerHTML =
+    '<strong>' + val + 'g</strong>/giorno &nbsp;·&nbsp; ' +
+    '<strong>' + (val*7) + 'g</strong>/settimana &nbsp;·&nbsp; ' +
+    '<strong>' + (val*daysInMonth) + 'g</strong> questo mese (se attivo tutto il mese)';
+}
+
+function renderGoalHistory() {
+  const el = document.getElementById('goal-history');
+  if (!el) return;
+  const today = todayKey();
+  // show in reverse order (most recent first)
+  const sorted = [...goalHistory].sort((a,b) => b.from.localeCompare(a.from));
+  let html = '<div class="goal-history-title">Storico obiettivi</div>';
+  sorted.forEach((e, i) => {
+    const isCurrent = e.from <= today && (i === 0 || sorted[i-1].from > today);
+    // find the actual current (last entry with from <= today)
+    const cur = goalHistory.filter(x => x.from <= today).at(-1);
+    const isActive = cur && e.from === cur.from;
+    const canDelete = goalHistory.length > 1 && !(goalHistory.length === 1);
+    const label = formatDateLabel(e.from);
+    html += '<div class="goal-history-item">' +
+      '<span class="goal-hist-date">' + label +
+        '<span class="goal-hist-badge' + (isActive ? ' current' : '') + '">' +
+          (isActive ? 'attivo' : (e.from > today ? 'futuro' : 'passato')) +
+        '</span>' +
+      '</span>' +
+      '<span style="display:flex;align-items:center;gap:8px">' +
+        '<span class="goal-hist-val">' + e.value + 'g</span>' +
+        (canDelete ? '<button class="goal-hist-del" onclick="deleteGoalEntry(\'' + e.from + '\')" aria-label="Rimuovi"><i class="ti ti-trash"></i></button>' : '') +
+      '</span>' +
+    '</div>';
+  });
+  el.innerHTML = html;
+}
+
+function formatDateLabel(dateKey) {
+  const [y, m, d] = dateKey.split('-').map(Number);
+  const months = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+  if (dateKey === '2000-01-01') return 'Valore iniziale';
+  return d + ' ' + months[m-1] + ' ' + y;
+}
+
+/* ---- DATA ---- */
+function load() {
+  try { const raw = localStorage.getItem(DATA_KEY); if (raw) data = JSON.parse(raw); } catch(e) {}
+  loadGoals();
   initToday();
   renderCal();
   updateBackupStats();
+  document.getElementById('goal-input').addEventListener('input', updateGoalPreview);
+  document.getElementById('food-prot').addEventListener('keydown', e => { if (e.key==='Enter') addFood(); });
+  document.getElementById('food-name').addEventListener('keydown', e => { if (e.key==='Enter') document.getElementById('food-prot').focus(); });
 }
 
-function save() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
-}
+function saveData() { localStorage.setItem(DATA_KEY, JSON.stringify(data)); }
 
 function todayKey() {
   const d = new Date();
   return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
 }
 
-function dayTotal(k) {
-  return (data[k] || []).reduce((s, f) => s + f.g, 0);
-}
+function dayTotal(k) { return (data[k]||[]).reduce((s,f)=>s+f.g,0); }
 
 function initToday() {
   const now = new Date();
@@ -262,225 +378,206 @@ function initToday() {
 function renderToday() {
   const k = todayKey();
   const foods = data[k] || [];
-  const total = foods.reduce((s, f) => s + f.g, 0);
-  const ok = total >= GOAL;
-  const pct = Math.min(100, Math.round(total / GOAL * 100));
+  const total = foods.reduce((s,f)=>s+f.g, 0);
+  const goal  = getGoalForDate(k);
+  const ok    = total >= goal;
+  const pct   = Math.min(100, Math.round(total / goal * 100));
+  document.getElementById('today-goal-val').textContent = goal + 'g';
   document.getElementById('total-val').textContent = total + 'g';
-  document.getElementById('total-val').className = 'goal-total-val ' + (ok ? 'ok' : 'ko');
+  document.getElementById('total-val').className = 'goal-total-val ' + (ok?'ok':'ko');
   const pf = document.getElementById('prog-fill');
   pf.style.width = pct + '%';
-  pf.className = 'progress-fill ' + (ok ? 'ok' : 'ko');
-  const rem = GOAL - total;
+  pf.className = 'progress-fill ' + (ok?'ok':'ko');
+  const rem = goal - total;
   const rt = document.getElementById('remaining-text');
-  if (ok) {
-    rt.innerHTML = '<span class="highlight ok">Obiettivo raggiunto!</span> +' + Math.abs(rem) + 'g extra';
-  } else {
-    rt.innerHTML = '<span class="highlight ko">' + rem + 'g mancanti</span> all\'obiettivo';
-  }
-  const card = document.getElementById('foods-card');
+  rt.innerHTML = ok
+    ? '<span class="hl ok">Obiettivo raggiunto!</span> +' + Math.abs(rem) + 'g extra'
+    : '<span class="hl ko">' + rem + 'g mancanti</span> all\'obiettivo';
+  const card  = document.getElementById('foods-card');
   const empty = document.getElementById('empty-state');
-  Array.from(card.querySelectorAll('.food-item')).forEach(el => el.remove());
-  if (foods.length === 0) {
-    empty.style.display = '';
-  } else {
-    empty.style.display = 'none';
-    foods.forEach((f, i) => {
-      const div = document.createElement('div');
-      div.className = 'food-item';
-      div.innerHTML =
-        '<span class="food-name">' + esc(f.n) + '</span>' +
-        '<span class="food-right">' +
-          '<span class="food-grams">' + f.g + 'g prot.</span>' +
-          '<button class="food-del" onclick="delFood(' + i + ')" aria-label="Rimuovi"><i class="ti ti-trash"></i></button>' +
-        '</span>';
-      card.appendChild(div);
-    });
-  }
+  Array.from(card.querySelectorAll('.food-item')).forEach(el=>el.remove());
+  if (!foods.length) { empty.style.display=''; return; }
+  empty.style.display = 'none';
+  foods.forEach((f,i) => {
+    const div = document.createElement('div');
+    div.className = 'food-item';
+    div.innerHTML =
+      '<span class="food-name">'+esc(f.n)+'</span>' +
+      '<span class="food-right"><span class="food-grams">'+f.g+'g</span>' +
+      '<button class="food-del" onclick="delFood('+i+')" aria-label="Rimuovi"><i class="ti ti-trash"></i></button></span>';
+    card.appendChild(div);
+  });
 }
 
 function addFood() {
   const nameEl = document.getElementById('food-name');
   const protEl = document.getElementById('food-prot');
   const n = nameEl.value.trim();
-  const g = parseInt(protEl.value) || 0;
-  if (!n || g <= 0) return;
+  const g = parseInt(protEl.value)||0;
+  if (!n||g<=0) return;
   const k = todayKey();
-  if (!data[k]) data[k] = [];
-  data[k].push({ n, g });
-  save();
-  nameEl.value = '';
-  protEl.value = '';
-  nameEl.focus();
-  renderToday();
-  renderCal();
-  updateBackupStats();
+  if (!data[k]) data[k]=[];
+  data[k].push({n,g});
+  saveData(); nameEl.value=''; protEl.value=''; nameEl.focus();
+  renderToday(); renderCal(); updateBackupStats();
 }
 
 function delFood(i) {
   const k = todayKey();
-  if (data[k]) { data[k].splice(i, 1); save(); renderToday(); renderCal(); updateBackupStats(); }
+  if (data[k]) { data[k].splice(i,1); saveData(); renderToday(); renderCal(); updateBackupStats(); }
 }
 
-function esc(s) {
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+/* ---- CALENDAR ---- */
+function renderCal() {
+  const now   = new Date();
+  const year  = now.getFullYear();
+  const month = now.getMonth();
+  const mNames = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+  const daysInMonth = new Date(year, month+1, 0).getDate();
+  const startOffset = (new Date(year, month, 1).getDay()+6)%7;
+
+  // Monthly totals using per-day goals
+  let monthTotal = 0, monthGoal = 0;
+  for (let d=1; d<=daysInMonth; d++) {
+    const k = dkey(year, month, d);
+    monthTotal += dayTotal(k);
+    monthGoal  += getGoalForDate(k);
+  }
+  const monthOk = monthTotal >= monthGoal;
+
+  let html = '<div class="cal-month-header">' +
+    '<div class="cal-month-name">' + mNames[month] + ' ' + year + '</div>' +
+    '<div class="cal-month-stats">Obiettivo mese: <strong>' + monthGoal + 'g</strong> &nbsp;·&nbsp; Assunti: <span class="hl ' + (monthOk?'ok':'ko') + '">' + monthTotal + 'g</span></div>' +
+    '</div>';
+
+  const wds = ['Lun','Mar','Mer','Gio','Ven','Sab','Dom'];
+  html += '<div class="cal-weekdays">' + wds.map(w=>'<div class="cal-wd">'+w+'</div>').join('') + '</div>';
+  html += '<div class="cal-grid">';
+
+  let cells = Array(startOffset).fill(null);
+  for (let d=1; d<=daysInMonth; d++) cells.push(d);
+  while (cells.length%7) cells.push(null);
+
+  const today = now.getDate();
+  for (let i=0; i<cells.length; i++) {
+    if (i>0 && i%7===0) html += buildWeekSummary(cells.slice(i-7,i), year, month);
+    const d = cells[i];
+    if (d===null) { html+='<div class="cal-cell empty"></div>'; continue; }
+    const k  = dkey(year, month, d);
+    const gt = dayTotal(k);
+    const dg = getGoalForDate(k);
+    const ok = gt>=dg;
+    html += '<div class="cal-cell' + (d===today?' today':'') + '">' +
+      '<span class="cal-day-num">'+d+'</span>' +
+      (gt>0 ? '<span class="cal-day-g '+(ok?'ok':'ko')+'">'+gt+'g</span>'
+             : '<span class="cal-day-g none">–</span>') +
+    '</div>';
+  }
+  const last = cells.slice(cells.length-7);
+  if (last.some(c=>c!==null)) html += buildWeekSummary(last, year, month);
+  html += '</div>';
+  document.getElementById('cal-container').innerHTML = html;
+}
+
+function buildWeekSummary(slice, year, month) {
+  const days = slice.filter(c=>c!==null);
+  let wkTotal=0, wkGoal=0;
+  days.forEach(d => {
+    const k = dkey(year, month, d);
+    wkTotal += dayTotal(k);
+    wkGoal  += getGoalForDate(k);
+  });
+  const ok = wkTotal >= wkGoal;
+  return '<div class="week-summary '+(ok?'ok':'ko')+'" style="grid-column:1/-1">' +
+    '<span class="week-sum-label"><i class="ti ti-sum" style="font-size:14px"></i> Settimana</span>' +
+    '<span class="week-sum-val">'+wkTotal+'g / '+wkGoal+'g</span>' +
+    '</div>';
+}
+
+function dkey(year, month, day) {
+  return year+'-'+String(month+1).padStart(2,'0')+'-'+String(day).padStart(2,'0');
 }
 
 /* ---- BACKUP ---- */
 function exportData() {
   const keys = Object.keys(data);
-  if (keys.length === 0) { showToast('Nessun dato da esportare', 'err'); return; }
+  if (!keys.length && goalHistory.length<=1) { showToast('Nessun dato da esportare','err'); return; }
   const now = new Date();
-  const filename = 'proteine-backup-' +
-    now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + '.json';
-  const payload = JSON.stringify({ version: 1, exported: now.toISOString(), data }, null, 2);
-  const blob = new Blob([payload], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  a.click();
+  const filename = 'proteine-backup-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'.json';
+  const payload = JSON.stringify({ version:2, exported:now.toISOString(), goalHistory, data }, null, 2);
+  const blob = new Blob([payload], {type:'application/json'});
+  const url  = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download=filename; a.click();
   URL.revokeObjectURL(url);
-  showToast('Backup esportato!', 'ok');
+  showToast('Backup esportato!','ok');
 }
 
 function importData(event) {
-  const file = event.target.files[0];
-  if (!file) return;
+  const file = event.target.files[0]; if (!file) return;
   const reader = new FileReader();
-  reader.onload = function(e) {
+  reader.onload = e => {
     try {
       const parsed = JSON.parse(e.target.result);
+      // Merge goal history
+      if (parsed.goalHistory && Array.isArray(parsed.goalHistory)) {
+        parsed.goalHistory.forEach(entry => {
+          if (!goalHistory.find(x=>x.from===entry.from)) goalHistory.push(entry);
+        });
+        goalHistory.sort((a,b)=>a.from.localeCompare(b.from));
+        saveGoals(); syncGoalUI();
+      } else if (parsed.goal) {
+        // v1 backup compatibility
+        const k = '2000-01-01';
+        if (!goalHistory.find(x=>x.from===k)) goalHistory.unshift({from:k, value:parsed.goal});
+        saveGoals(); syncGoalUI();
+      }
+      // Merge food data
       const incoming = parsed.data || parsed;
-      if (typeof incoming !== 'object') throw new Error('Formato non valido');
-      let added = 0, merged = 0;
-      Object.keys(incoming).forEach(k => {
-        if (!Array.isArray(incoming[k])) return;
-        if (!data[k]) {
-          data[k] = incoming[k];
-          added++;
-        } else {
-          const existing = new Set(data[k].map(f => f.n + '|' + f.g));
-          incoming[k].forEach(f => {
-            if (!existing.has(f.n + '|' + f.g)) {
-              data[k].push(f);
-              merged++;
-            }
-          });
-        }
-      });
-      save();
-      renderToday();
-      renderCal();
-      updateBackupStats();
-      showToast('Importati ' + (added + merged) + ' record!', 'ok');
-    } catch(err) {
-      showToast('File non valido', 'err');
-    }
-    event.target.value = '';
+      let added=0, merged=0;
+      if (typeof incoming==='object') {
+        Object.keys(incoming).forEach(k=>{
+          if (!Array.isArray(incoming[k])) return;
+          if (!data[k]) { data[k]=incoming[k]; added++; }
+          else {
+            const ex = new Set(data[k].map(f=>f.n+'|'+f.g));
+            incoming[k].forEach(f=>{ if(!ex.has(f.n+'|'+f.g)){data[k].push(f);merged++;} });
+          }
+        });
+      }
+      saveData(); renderToday(); renderCal(); updateBackupStats();
+      showToast('Importati '+(added+merged)+' record!','ok');
+    } catch(err) { showToast('File non valido','err'); }
+    event.target.value='';
   };
   reader.readAsText(file);
 }
 
 function updateBackupStats() {
   const keys = Object.keys(data);
-  const totalEntries = keys.reduce((s, k) => s + (data[k] || []).length, 0);
+  const total = keys.reduce((s,k)=>s+(data[k]||[]).length,0);
   const el = document.getElementById('backup-stats');
-  if (keys.length === 0) {
-    el.textContent = 'Nessun dato salvato.';
-  } else {
-    el.innerHTML = '<span>' + keys.length + '</span> giorni registrati &nbsp;·&nbsp; <span>' + totalEntries + '</span> alimenti totali';
-  }
+  el.innerHTML = keys.length===0 ? 'Nessun dato salvato.'
+    : '<span>'+keys.length+'</span> giorni · <span>'+total+'</span> alimenti · <span>'+goalHistory.length+'</span> obiettivi';
 }
 
-/* ---- TOAST ---- */
-let toastTimer = null;
-function showToast(msg, type) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = 'toast show ' + (type === 'ok' ? 'ok-toast' : type === 'err' ? 'err-toast' : '');
-  if (toastTimer) clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { t.className = 'toast'; }, 2500);
-}
-
-/* ---- CALENDARIO ---- */
-function renderCal() {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth();
-  const monthNames = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const firstDay = new Date(year, month, 1).getDay();
-  const startOffset = (firstDay + 6) % 7;
-  const monthGoal = GOAL * daysInMonth;
-  let monthTotal = 0;
-  for (let d = 1; d <= daysInMonth; d++) {
-    const k = year + '-' + String(month+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
-    monthTotal += dayTotal(k);
-  }
-  const monthOk = monthTotal >= monthGoal;
-  let html = '<div class="cal-month-header">';
-  html += '<div class="cal-month-name">' + monthNames[month] + ' ' + year + '</div>';
-  html += '<div class="cal-month-stats">Obiettivo: ' + monthGoal + 'g &nbsp;·&nbsp; Assunti: <span class="highlight ' + (monthOk?'ok':'ko') + '">' + monthTotal + 'g</span></div>';
-  html += '</div>';
-  const wds = ['Lun','Mar','Mer','Gio','Ven','Sab','Dom'];
-  html += '<div class="cal-weekdays">';
-  wds.forEach(w => { html += '<div class="cal-wd">' + w + '</div>'; });
-  html += '</div>';
-  html += '<div class="cal-grid">';
-  let cells = [];
-  for (let i = 0; i < startOffset; i++) cells.push(null);
-  for (let d = 1; d <= daysInMonth; d++) cells.push(d);
-  while (cells.length % 7 !== 0) cells.push(null);
-  const today = now.getDate();
-  for (let i = 0; i < cells.length; i++) {
-    if (i > 0 && i % 7 === 0) {
-      html += buildWeekSummary(cells.slice(i-7, i), year, month);
-    }
-    const d = cells[i];
-    if (d === null) { html += '<div class="cal-cell empty"></div>'; continue; }
-    const k = year + '-' + String(month+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
-    const gt = dayTotal(k);
-    const isToday = d === today;
-    const ok = gt >= GOAL;
-    html += '<div class="cal-cell' + (isToday ? ' today' : '') + '">';
-    html += '<span class="cal-day-num">' + d + '</span>';
-    html += gt > 0
-      ? '<span class="cal-day-g ' + (ok?'ok':'ko') + '">' + gt + 'g</span>'
-      : '<span class="cal-day-g none">–</span>';
-    html += '</div>';
-  }
-  const lastSlice = cells.slice(cells.length - 7);
-  if (lastSlice.some(c => c !== null)) {
-    html += buildWeekSummary(lastSlice, year, month);
-  }
-  html += '</div>';
-  document.getElementById('cal-container').innerHTML = html;
-}
-
-function buildWeekSummary(slice, year, month) {
-  const days = slice.filter(c => c !== null);
-  let wkTotal = 0;
-  days.forEach(d => {
-    const k = year + '-' + String(month+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
-    wkTotal += dayTotal(k);
-  });
-  const wkGoal = days.length * GOAL;
-  const wkOk = wkTotal >= wkGoal;
-  return '<div class="week-summary ' + (wkOk?'ok':'ko') + '" style="grid-column:1/-1">' +
-    '<span class="week-sum-label"><i class="ti ti-sum" style="font-size:14px"></i> Settimana</span>' +
-    '<span class="week-sum-val">' + wkTotal + 'g / ' + wkGoal + 'g</span>' +
-    '</div>';
-}
-
+/* ---- UI HELPERS ---- */
 function showTab(t) {
-  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById('tab-' + t).classList.add('active');
-  document.getElementById('view-' + t).classList.add('active');
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+  document.getElementById('view-'+t).classList.add('active');
 }
 
-document.getElementById('food-prot').addEventListener('keydown', e => { if (e.key === 'Enter') addFood(); });
-document.getElementById('food-name').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('food-prot').focus(); });
+let toastTimer=null;
+function showToast(msg,type){
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.className='toast show '+(type==='ok'?'ok-toast':type==='err'?'err-toast':'');
+  if(toastTimer)clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>{t.className='toast';},2500);
+}
 
 load();
 </script>
