@@ -28,6 +28,9 @@
   --red:#A32D2D;
   --red-bg:#FCEBEB;
   --red-border:#F09595;
+  --blue:#185FA5;
+  --blue-bg:#E6F1FB;
+  --blue-border:#85B7EB;
   --radius:12px;
   --radius-sm:8px;
 }
@@ -35,7 +38,7 @@
 html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);overscroll-behavior:none}
 .app{display:flex;flex-direction:column;height:100vh;max-width:480px;margin:0 auto}
 .tab-bar{display:flex;background:var(--card);border-bottom:1px solid var(--border);padding:0 1rem;flex-shrink:0}
-.tab{flex:1;padding:14px 8px;font-size:13px;font-weight:500;text-align:center;cursor:pointer;border:none;background:none;color:var(--text2);border-bottom:2.5px solid transparent;transition:all .2s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px}
+.tab{flex:1;padding:14px 4px;font-size:13px;font-weight:500;text-align:center;cursor:pointer;border:none;background:none;color:var(--text2);border-bottom:2.5px solid transparent;transition:all .2s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:5px}
 .tab.active{color:var(--text);border-bottom-color:var(--text)}
 .tab i{font-size:17px}
 .view{display:none;flex:1;overflow-y:auto;padding:1.25rem}
@@ -75,7 +78,7 @@ html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;colo
 .add-row input[type=text]:focus{border-color:var(--border2)}
 .add-row input[type=number]{width:68px;font-size:14px;padding:10px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;text-align:center}
 .add-row input[type=number]:focus{border-color:var(--border2)}
-.add-btn{padding:10px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--text);font-size:14px;font-weight:500;cursor:pointer;color:#fff;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:4px;flex-shrink:0}
+.add-btn{padding:10px 14px;border-radius:var(--radius-sm);border:none;background:var(--text);font-size:14px;font-weight:500;cursor:pointer;color:#fff;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:4px;flex-shrink:0}
 .add-btn:active{opacity:.85}
 .cal-month-header{margin-bottom:1rem}
 .cal-month-name{font-size:20px;font-weight:600;color:var(--text);margin-bottom:4px;text-transform:capitalize}
@@ -86,9 +89,8 @@ html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;colo
 .cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:3px}
 .cal-wd{font-size:10px;font-weight:600;color:var(--text3);text-align:center;padding:4px 0;text-transform:uppercase;letter-spacing:.04em}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
-.cal-cell{border-radius:var(--radius-sm);padding:6px 3px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;background:var(--card);border:1px solid var(--border);cursor:pointer;transition:border-color .15s}
-.cal-cell:active{border-color:var(--border2)}
-.cal-cell.empty{background:transparent;border-color:transparent;cursor:default}
+.cal-cell{border-radius:var(--radius-sm);padding:6px 3px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;background:var(--card);border:1px solid var(--border)}
+.cal-cell.empty{background:transparent;border-color:transparent}
 .cal-cell.today{border:2px solid var(--text)}
 .cal-day-num{font-size:12px;font-weight:500;color:var(--text);line-height:1.3}
 .cal-day-g{font-size:10px;margin-top:4px;font-weight:600;line-height:1.2}
@@ -106,6 +108,29 @@ html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;colo
 .week-summary.ko .week-sum-val{color:var(--red)}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+
+/* Backup view */
+.backup-section{margin-bottom:1.5rem}
+.backup-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:1.1rem 1.25rem}
+.backup-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.backup-title i{font-size:18px}
+.backup-desc{font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.5}
+.backup-btn{width:100%;padding:12px;border-radius:var(--radius-sm);font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .15s}
+.backup-btn:active{opacity:.8}
+.btn-export{background:var(--text);color:#fff;border:none}
+.btn-import{background:var(--card);color:var(--text);border:1px solid var(--border2)}
+.backup-stats{font-size:12px;color:var(--text3);text-align:center;margin-top:10px}
+.backup-stats span{font-weight:600;color:var(--text2)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:#fff;font-size:13px;font-weight:500;padding:10px 20px;border-radius:99px;opacity:0;transition:all .3s;pointer-events:none;z-index:999;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.ok-toast{background:var(--green)}
+.toast.err-toast{background:var(--red)}
+.import-area{border:1.5px dashed var(--border2);border-radius:var(--radius-sm);padding:20px;text-align:center;cursor:pointer;transition:border-color .2s;position:relative}
+.import-area:hover{border-color:var(--blue)}
+.import-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.import-icon{font-size:28px;color:var(--text3);margin-bottom:6px}
+.import-label{font-size:13px;color:var(--text2);font-weight:500}
+.import-sub{font-size:12px;color:var(--text3);margin-top:3px}
 </style>
 </head>
 <body>
@@ -117,12 +142,15 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
     <button class="tab" id="tab-calendario" onclick="showTab('calendario')">
       <i class="ti ti-calendar"></i> Calendario
     </button>
+    <button class="tab" id="tab-backup" onclick="showTab('backup')">
+      <i class="ti ti-database"></i> Backup
+    </button>
   </div>
 
+  <!-- OGGI -->
   <div id="view-oggi" class="view active">
     <div class="date-label" id="date-label"></div>
     <div class="day-title">diario proteico</div>
-
     <div class="goal-card">
       <div class="goal-top">
         <div>
@@ -141,12 +169,10 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
         <span class="highlight ko">200g mancanti</span> all'obiettivo
       </div>
     </div>
-
     <div class="section-label">Alimenti di oggi</div>
     <div class="foods-card" id="foods-card">
       <div class="empty-state" id="empty-state">Nessun alimento aggiunto ancora.</div>
     </div>
-
     <div class="section-label">Aggiungi alimento</div>
     <div class="add-card">
       <div class="add-row">
@@ -159,10 +185,42 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
     </div>
   </div>
 
+  <!-- CALENDARIO -->
   <div id="view-calendario" class="view">
     <div id="cal-container"></div>
   </div>
+
+  <!-- BACKUP -->
+  <div id="view-backup" class="view">
+    <div class="backup-section">
+      <div class="section-label">Esporta dati</div>
+      <div class="backup-card">
+        <div class="backup-title"><i class="ti ti-file-download"></i> Scarica backup</div>
+        <div class="backup-desc">Esporta tutti i tuoi dati in un file JSON. Conservalo sul telefono o in cloud per non perderlo mai.</div>
+        <button class="backup-btn btn-export" onclick="exportData()">
+          <i class="ti ti-download" style="font-size:17px"></i> Esporta dati
+        </button>
+        <div class="backup-stats" id="backup-stats"></div>
+      </div>
+    </div>
+
+    <div class="backup-section">
+      <div class="section-label">Importa dati</div>
+      <div class="backup-card">
+        <div class="backup-title"><i class="ti ti-file-upload"></i> Ripristina backup</div>
+        <div class="backup-desc">Seleziona un file JSON esportato in precedenza. I dati verranno <strong>aggiunti</strong> a quelli esistenti — le giornate già presenti vengono mantenute.</div>
+        <div class="import-area" id="import-area">
+          <input type="file" accept=".json,application/json" onchange="importData(event)" id="file-input"/>
+          <div class="import-icon"><i class="ti ti-file-import"></i></div>
+          <div class="import-label">Tocca per selezionare il file</div>
+          <div class="import-sub">Formato: .json</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="toast" id="toast"></div>
 
 <script>
 const GOAL = 200;
@@ -176,6 +234,7 @@ function load() {
   } catch(e) {}
   initToday();
   renderCal();
+  updateBackupStats();
 }
 
 function save() {
@@ -206,13 +265,11 @@ function renderToday() {
   const total = foods.reduce((s, f) => s + f.g, 0);
   const ok = total >= GOAL;
   const pct = Math.min(100, Math.round(total / GOAL * 100));
-
   document.getElementById('total-val').textContent = total + 'g';
   document.getElementById('total-val').className = 'goal-total-val ' + (ok ? 'ok' : 'ko');
   const pf = document.getElementById('prog-fill');
   pf.style.width = pct + '%';
   pf.className = 'progress-fill ' + (ok ? 'ok' : 'ko');
-
   const rem = GOAL - total;
   const rt = document.getElementById('remaining-text');
   if (ok) {
@@ -220,12 +277,9 @@ function renderToday() {
   } else {
     rt.innerHTML = '<span class="highlight ko">' + rem + 'g mancanti</span> all\'obiettivo';
   }
-
   const card = document.getElementById('foods-card');
   const empty = document.getElementById('empty-state');
-
   Array.from(card.querySelectorAll('.food-item')).forEach(el => el.remove());
-
   if (foods.length === 0) {
     empty.style.display = '';
   } else {
@@ -259,17 +313,96 @@ function addFood() {
   nameEl.focus();
   renderToday();
   renderCal();
+  updateBackupStats();
 }
 
 function delFood(i) {
   const k = todayKey();
-  if (data[k]) { data[k].splice(i, 1); save(); renderToday(); renderCal(); }
+  if (data[k]) { data[k].splice(i, 1); save(); renderToday(); renderCal(); updateBackupStats(); }
 }
 
 function esc(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
+/* ---- BACKUP ---- */
+function exportData() {
+  const keys = Object.keys(data);
+  if (keys.length === 0) { showToast('Nessun dato da esportare', 'err'); return; }
+  const now = new Date();
+  const filename = 'proteine-backup-' +
+    now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + '.json';
+  const payload = JSON.stringify({ version: 1, exported: now.toISOString(), data }, null, 2);
+  const blob = new Blob([payload], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Backup esportato!', 'ok');
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      const incoming = parsed.data || parsed;
+      if (typeof incoming !== 'object') throw new Error('Formato non valido');
+      let added = 0, merged = 0;
+      Object.keys(incoming).forEach(k => {
+        if (!Array.isArray(incoming[k])) return;
+        if (!data[k]) {
+          data[k] = incoming[k];
+          added++;
+        } else {
+          const existing = new Set(data[k].map(f => f.n + '|' + f.g));
+          incoming[k].forEach(f => {
+            if (!existing.has(f.n + '|' + f.g)) {
+              data[k].push(f);
+              merged++;
+            }
+          });
+        }
+      });
+      save();
+      renderToday();
+      renderCal();
+      updateBackupStats();
+      showToast('Importati ' + (added + merged) + ' record!', 'ok');
+    } catch(err) {
+      showToast('File non valido', 'err');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function updateBackupStats() {
+  const keys = Object.keys(data);
+  const totalEntries = keys.reduce((s, k) => s + (data[k] || []).length, 0);
+  const el = document.getElementById('backup-stats');
+  if (keys.length === 0) {
+    el.textContent = 'Nessun dato salvato.';
+  } else {
+    el.innerHTML = '<span>' + keys.length + '</span> giorni registrati &nbsp;·&nbsp; <span>' + totalEntries + '</span> alimenti totali';
+  }
+}
+
+/* ---- TOAST ---- */
+let toastTimer = null;
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + (type === 'ok' ? 'ok-toast' : type === 'err' ? 'err-toast' : '');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.className = 'toast'; }, 2500);
+}
+
+/* ---- CALENDARIO ---- */
 function renderCal() {
   const now = new Date();
   const year = now.getFullYear();
@@ -278,7 +411,6 @@ function renderCal() {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDay = new Date(year, month, 1).getDay();
   const startOffset = (firstDay + 6) % 7;
-
   const monthGoal = GOAL * daysInMonth;
   let monthTotal = 0;
   for (let d = 1; d <= daysInMonth; d++) {
@@ -286,54 +418,41 @@ function renderCal() {
     monthTotal += dayTotal(k);
   }
   const monthOk = monthTotal >= monthGoal;
-
-  let html = '';
-  html += '<div class="cal-month-header">';
+  let html = '<div class="cal-month-header">';
   html += '<div class="cal-month-name">' + monthNames[month] + ' ' + year + '</div>';
-  html += '<div class="cal-month-stats">Obiettivo: ' + monthGoal + 'g &nbsp;·&nbsp; Assunti: <span class="highlight ' + (monthOk ? 'ok' : 'ko') + '">' + monthTotal + 'g</span></div>';
+  html += '<div class="cal-month-stats">Obiettivo: ' + monthGoal + 'g &nbsp;·&nbsp; Assunti: <span class="highlight ' + (monthOk?'ok':'ko') + '">' + monthTotal + 'g</span></div>';
   html += '</div>';
-
   const wds = ['Lun','Mar','Mer','Gio','Ven','Sab','Dom'];
   html += '<div class="cal-weekdays">';
   wds.forEach(w => { html += '<div class="cal-wd">' + w + '</div>'; });
   html += '</div>';
-
   html += '<div class="cal-grid">';
-
   let cells = [];
   for (let i = 0; i < startOffset; i++) cells.push(null);
   for (let d = 1; d <= daysInMonth; d++) cells.push(d);
   while (cells.length % 7 !== 0) cells.push(null);
-
   const today = now.getDate();
-
   for (let i = 0; i < cells.length; i++) {
     if (i > 0 && i % 7 === 0) {
-      const slice = cells.slice(i - 7, i);
-      html += buildWeekSummary(slice, year, month);
+      html += buildWeekSummary(cells.slice(i-7, i), year, month);
     }
     const d = cells[i];
     if (d === null) { html += '<div class="cal-cell empty"></div>'; continue; }
     const k = year + '-' + String(month+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
     const gt = dayTotal(k);
     const isToday = d === today;
-    const hasData = gt > 0;
     const ok = gt >= GOAL;
     html += '<div class="cal-cell' + (isToday ? ' today' : '') + '">';
     html += '<span class="cal-day-num">' + d + '</span>';
-    if (hasData) {
-      html += '<span class="cal-day-g ' + (ok ? 'ok' : 'ko') + '">' + gt + 'g</span>';
-    } else {
-      html += '<span class="cal-day-g none">–</span>';
-    }
+    html += gt > 0
+      ? '<span class="cal-day-g ' + (ok?'ok':'ko') + '">' + gt + 'g</span>'
+      : '<span class="cal-day-g none">–</span>';
     html += '</div>';
   }
-
   const lastSlice = cells.slice(cells.length - 7);
   if (lastSlice.some(c => c !== null)) {
     html += buildWeekSummary(lastSlice, year, month);
   }
-
   html += '</div>';
   document.getElementById('cal-container').innerHTML = html;
 }
@@ -347,7 +466,7 @@ function buildWeekSummary(slice, year, month) {
   });
   const wkGoal = days.length * GOAL;
   const wkOk = wkTotal >= wkGoal;
-  return '<div class="week-summary ' + (wkOk ? 'ok' : 'ko') + '" style="grid-column:1/-1">' +
+  return '<div class="week-summary ' + (wkOk?'ok':'ko') + '" style="grid-column:1/-1">' +
     '<span class="week-sum-label"><i class="ti ti-sum" style="font-size:14px"></i> Settimana</span>' +
     '<span class="week-sum-val">' + wkTotal + 'g / ' + wkGoal + 'g</span>' +
     '</div>';
